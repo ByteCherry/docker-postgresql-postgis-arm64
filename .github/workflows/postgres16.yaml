@@ -3,7 +3,8 @@ name: 'Docker Images: Postgres 16 + PostGIS'
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 5 */14 * *'  # At 5 AM (UTC) every 2 weeks
+    # This schedule triggers at 5 AM (UTC) on the 1st and 15th of every month
+    - cron: '0 5 1,15 * *'
 
 jobs:
   postgis-arm64:
